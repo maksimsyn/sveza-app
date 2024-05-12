@@ -1,0 +1,102 @@
++b('message')
+  position: fixed
+  z-index: 20
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  box-sizing: border-box
+  padding: 20px
+  overflow: auto
+  background-color: rgba(#D9D9D9, 0.8)
+  backdrop-filter: blur(10px)
+  +ts()
+  opacity: 0
+  visibility: hidden
+
+  +m('visible')
+    opacity: 1
+    visibility: visible
+
+    .message__inner
+      opacity: 1
+      visibility: visible
+      transform: none
+      transition-delay: 0.3s
+
+    .message__icon
+      svg *
+        stroke-dasharray: 2000
+        stroke-dashoffset: 2000
+        animation: dash 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards
+        animation-delay: 0.3s
+
+  +media($screen-lg)
+    padding: 100px
+
+  +e('inner')
+    background-color: $color-white
+    margin-top: auto
+    margin-bottom: 0
+    width: 100%
+    max-width: 552px
+    box-sizing: border-box
+    padding: 64px 20px 20px
+    display: flex
+    flex-direction: column
+    align-items: center
+    opacity: 0
+    visibility: hidden
+    transform: translateY(50px)
+    +ts()
+
+    +media($screen-lg)
+      padding: 55px 46px 46px
+
+  +e('icon')
+    margin-bottom: 20px
+
+    svg *
+      stroke: $color-green
+      stroke-width: 1px
+      fill-opacity: 0
+      stroke-dasharray: 0
+      stroke-dashoffset: 0
+
+  +e('text')
+    font-size: 19px
+    line-height: 27px
+    margin-bottom: 50px
+    text-align: center
+
+    +media($screen-lg)
+      margin-bottom: 30px
+
+      br
+        display: none
+
+  +e('btn')
+    padding: 9px 44px
+    text-align: center
+
+    .icon
+      fill: none
+      transition: all 0.2s ease-out
+      width: 5px
+      height: 10px
+      margin-left: 10px
+      stroke: $color-black
+      stroke-width: 2px
+
+    &:hover
+      .icon
+        transform: translateX(5px)
+
+    +media($screen-lg)
+      padding: 24px 40px

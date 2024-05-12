@@ -1,0 +1,181 @@
++b('intro')
+  margin-bottom: 75px
+
+  +media($screen-lg)
+    margin-bottom: 200px
+
+  +e('container')
+    position: relative
+    height: calc(100vh - 58px)
+
+    @supports (height: calc((var(--vh) * 100) - 58px))
+      height: calc((var(--vh) * 100) - 58px)
+
+    +media($screen-sm)
+      height: calc(100vh - 58px)
+
+      @supports (height: calc((var(--vh) * 100) - 78px))
+        height: calc((var(--vh) * 100) - 78px)
+
+    +media($screen-lg)
+      height: 680px
+
+  +e('inner')
+    box-sizing: border-box
+    height: inherit
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 34px 20px 58px 20px
+    background-image: url('/img/sveza.png')
+    background-size: 100vh
+    background-position: -10vh bottom
+    background-repeat: no-repeat
+    position: relative
+
+    @supports (background-size: calc((var(--vh) * 100) + 50px))
+      background-size: calc((var(--vh) * 100) + 50px)
+
+    &::before,
+    &::after
+      width: 100%
+      height: 100%
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+
+    &::before
+      background-image: radial-gradient(50% 50% at 50% 50%, #EEFFFB 0%, #8DE3D9 100%)
+      opacity: 0.8
+      z-index: -1
+
+    &::after
+      background-image: linear-gradient(183.05deg, rgba(0, 0, 0, 0) -25.76%, #000000 98.47%)
+      opacity: 0.25
+      z-index: 1
+
+    +media($screen-md)
+      background-position: center bottom
+
+    +media($screen-lg)
+      flex-direction: row
+      align-items: flex-end
+      padding-bottom: 156px
+      background-size: cover
+      background-position: center
+
+    +media($screen-xl)
+      padding-left: 100px
+      padding-right: 100px
+      background-size: contain
+      background-position: bottom
+
+  +e('title')
+    font-size: 42px
+    line-height: 49px
+    text-align: center
+    text-transform: uppercase
+
+    +media($screen-lg)
+      text-align: left
+      font-size: 69px
+      line-height: 76px
+      margin-bottom: 20px
+
+      br:not(:first-of-type)
+        display: none
+
+  +e('subtitle')
+    display: none
+
+    +media($screen-lg)
+      display: block
+      font-weight: 700
+      font-size: 18px
+      line-height: 24px
+      color: $color-white
+      margin: 0
+      padding-top: 20px
+      border-top: 1px solid $color-white
+
+  +e('col')
+    position: relative
+    z-index: 3
+
+    +m('left')
+      margin-bottom: 142px
+      margin-top: auto
+
+      +media($screen-lg)
+        margin-top: 0
+        top: -45px
+        margin-bottom: 0
+        width: 100%
+
+    +m('right')
+      margin-top: auto
+      display: flex
+      flex-direction: column
+
+      +media($screen-lg)
+        width: 292px
+        flex-shrink: 0
+        margin-top: 0
+
+
+  +e('btn')
+    padding: 12px 38px
+
+    +media($screen-lg)
+      padding: 32px 62px
+
+  +e('more')
+    position: absolute
+    bottom: 0
+    left: -1px
+    z-index: 1
+    padding-top: 11px
+    padding-bottom: 4px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    padding-right: 80px
+    background-color: $color-white
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%)
+    font-size: 15px
+    line-height: 24px
+    color: #050100
+
+    .icon
+      width: 13px
+      height: 28px
+      margin-right: 16px
+
+    +ie()
+      background-image: url('/img/intro-more-clip.svg')
+      background-repeat: no-repeat
+      background-size: contain
+      background-position: left center
+      background-color: transparent
+
+    +media($screen-lg)
+      display: flex
+      align-items: center
+      justify-content: center
+      bottom: -1px
+      padding: 33px 150px 34px 20px
+      font-size: 18px
+      line-height: 24px
+      clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%)
+
+      .icon
+        width: 16px
+        height: 35px
+        margin-right: 12px
+
+      +ie()
+        background-image: url('/img/intro-more-clip-desktop.svg')
+
+    +media($screen-xl)
+      padding-left: 100px

@@ -1,0 +1,470 @@
++b('contacts')
+  overflow: hidden
+
+  +e('title')
+    margin-bottom: 40px
+
+    +media($screen-lg)
+      margin-bottom: 60px
+
+  +e('text')
+    font-size: 19px
+    line-height: 33px
+
+  +e('link')
+    display: inline-block
+    font-size: 19px
+    line-height: 33px
+    font-weight: 700
+    margin-bottom: 28px
+    +ts()
+
+    &:hover
+      color: $color-green
+
+    +media($screen-lg)
+      margin-bottom: 40px
+
+  +e('desc')
+    font-size: 13px
+    line-height: 20px
+    color: rgba($color-black, 0.5)
+
+    +media($screen-lg)
+      br
+        display: none
+
+  +e('col')
+    +m('left')
+      margin-bottom: 28px
+
+    +m('right')
+      width: 100vw
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+
+      +media($screen-lg)
+        margin-left: 230px
+        width: 100%
+        left: auto
+        transform: none
+        display: flex
+        flex-direction: column-reverse
+
+  +e('map-wrapper')
+    height: 420px
+    position: relative
+
+  +e('img')
+    max-width: none
+    height: 100%
+    transform: scale(1.4) translateX(56px)
+
+    +media($screen-lg)
+      width: 944px
+      height: 490px
+      transform: translateY(-100px) translateX(-240px)
+
+    +media($screen-xxl)
+      transform: translateY(-100px) translateX(80px)
+
+  +e('addresses')
+    width: 320px
+    box-sizing: border-box
+    padding: 40px 20px
+    height: 204px
+    background-color: $color-green
+    position: relative
+    clip-path: polygon(90% 0, 100% 10%, 100% 100%, 0 100%, 0 0)
+    opacity: 0
+    visibility: hidden
+    transition: all 0.1s ease-out
+    z-index: 3
+
+    +ie()
+      background-color: transparent
+      background-image: url("/img/contacts-clip-mobile.svg")
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+
+    +m('active')
+      opacity: 1
+      visibility: visible
+
+    +media($screen-lg)
+      width: 296px
+      height: 205px
+      padding: 40px
+      clip-path: polygon(100% 0, 100% 90%, 90% 100%, 0 100%, 0 0)
+
+      +ie()
+        background-image: url("/img/contacts-clip-desktop.svg")
+
+  +e('dot')
+    box-sizing: border-box
+    width: 32px
+    height: 32px
+    background: rgba(129, 179, 59, 0.2)
+    border: 1px solid $color-green
+    position: absolute
+    border-radius: 50%
+    z-index: 1
+    animation: pulse 2s infinite
+    +ts()
+
+    &::before
+      width: 8px
+      height: 8px
+      content: ''
+      +absolute-center()
+      border-radius: 50%
+      background-color: $color-green
+      +ts()
+
+    &::after
+      width: 1px
+      height: 420px
+      content: ''
+      position: absolute
+      top: 100%
+      background-color: $color-green
+      z-index: 2
+      transition: all 0.3s ease-in-out
+      transform: scale(0)
+      transform-origin: top
+
+    +media($screen-lg)
+      width: 24px
+      height: 24px
+      top: 0
+
+      &::before
+        width: 6px
+        height: 6px
+
+    &:first-of-type
+      top: 78px
+      left: 78px
+
+      +media($screen-lg)
+        top: 40px
+        left: -113px
+
+      +media($screen-xxl)
+        left: 207px
+
+      &::after
+        left: 16px
+        top: 1px
+        transform: rotate(-5deg) scale(0)
+
+        +media($screen-lg)
+          transform: rotate(-125deg) scale(0)
+
+        +media($screen-xxl)
+          left: 3px
+          transform: rotate(-218deg) scale(0)
+
+    &:nth-of-type(2)
+      top: 146px
+      left: 148px
+
+      +media($screen-lg)
+        top: 80px
+        left: -62px
+
+      +media($screen-xxl)
+        left: 258px
+
+      &::after
+        left: 16px
+        top: 0
+        transform: rotate(-5deg) scale(0)
+
+        +media($screen-lg)
+          transform: rotate(-151deg) scale(0)
+
+        +media($screen-xxl)
+          left: 8px
+          transform: rotate(-201deg) scale(0)
+
+    &:nth-of-type(3)
+      top: 164px
+      left: 115px
+
+      +media($screen-lg)
+        top: 114px
+        left: -87px
+
+      +media($screen-xxl)
+        left: 233px
+
+      &::after
+        left: 16px
+        transform: rotate(-5deg) scale(0)
+
+        +media($screen-lg)
+          top: 0
+          transform: rotate(-139deg) scale(0)
+
+        +media($screen-xxl)
+          left: 6px
+          transform: rotate(-197deg) scale(0)
+
+    &:nth-of-type(4)
+      top: 186px
+      left: 152px
+
+      +media($screen-lg)
+        top: 112px
+        left: -59px
+
+      +media($screen-xxl)
+        left: 261px
+
+      &::after
+        left: 16px
+        transform: rotate(-5deg) scale(0)
+
+        +media($screen-lg)
+          top: 0
+          transform: rotate(-137deg) scale(0)
+
+        +media($screen-xxl)
+          left: 5px
+          transform: rotate(-219deg) scale(0)
+
+    &:nth-of-type(5)
+      top: 291px
+      left: 44px
+
+      +media($screen-lg)
+        top: 214px
+        left: -131px
+
+      +media($screen-xxl)
+        left: 189px
+
+      &::after
+        left: 20px
+        transform: rotate(-35deg) scale(0)
+
+        +media($screen-lg)
+          left: 16px
+          top: 0
+          transform: rotate(-141deg) scale(0)
+
+        +media($screen-xxl)
+          transform: rotate(-170deg) scale(0)
+
+    &:nth-of-type(6)
+      top: 251px
+      left: 222px
+
+      +media($screen-lg)
+        top: 175px
+        left: -4px
+
+      +media($screen-xxl)
+        left: 316px
+
+      &::after
+        left: 8px
+        transform: rotate(25deg) scale(0)
+
+        +media($screen-lg)
+          top: 0
+          left: 16px
+          transform: rotate(-150deg) scale(0)
+
+        +media($screen-xxl)
+          transform: rotate(-195deg) scale(0)
+
+    &:nth-of-type(7)
+      top: 274px
+      left: 266px
+
+      +media($screen-lg)
+        top: 207px
+        left: 37px
+
+      +media($screen-xxl)
+        left: 357px
+
+      &::after
+        left: 8px
+        transform: rotate(25deg) scale(0)
+
+        +media($screen-lg)
+          top: 0
+          left: 16px
+          transform: rotate(-160deg) scale(0)
+
+        +media($screen-xxl)
+          transform: rotate(-202deg) scale(0)
+          left: 9px
+
+    &:nth-of-type(8)
+      top: 307px
+      left: 288px
+
+      +media($screen-lg)
+        top: 222px
+        left: 59px
+
+      +media($screen-xxl)
+        left: 379px
+
+      &::after
+        left: 8px
+        transform: rotate(25deg) scale(0)
+
+        +media($screen-lg)
+          top: 0
+          left: 16px
+          transform: rotate(-167deg) scale(0)
+
+        +media($screen-xxl)
+          transform: rotate(-207deg) scale(0)
+          left: 12px
+
+    +m('active')
+      transform: scale(1.6)
+      background-color: $color-green
+      animation: none
+
+      &::before
+        background-color: $color-white
+
+      &:first-of-type,
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(4)
+        &::after
+          transform: rotate(-5deg) scale(1)
+
+      &:nth-of-type(5)
+        &::after
+          transform: rotate(-35deg) scale(1)
+
+      &:nth-of-type(6),
+      &:nth-of-type(7),
+      &:nth-of-type(8)
+        &::after
+          transform: rotate(25deg) scale(1)
+
+      +media($screen-lg)
+        &:first-of-type
+          &::after
+            transform: rotate(-125deg) scale(1)
+
+        &:nth-of-type(2)
+          &::after
+            transform: rotate(-151deg) scale(1)
+
+        &:nth-of-type(3)
+          &::after
+            transform: rotate(-139deg) scale(1)
+
+        &:nth-of-type(4)
+          &::after
+            transform: rotate(-137deg) scale(1)
+
+        &:nth-of-type(5)
+          &::after
+            transform: rotate(-141deg) scale(1)
+
+        &:nth-of-type(6)
+          &::after
+            transform: rotate(-150deg) scale(1)
+
+        &:nth-of-type(7)
+          &::after
+            transform: rotate(-160deg) scale(1)
+
+        &:nth-of-type(8)
+          &::after
+            transform: rotate(-167deg) scale(1)
+
+      +media($screen-xxl)
+        &:nth-of-type(1)
+          &::after
+            transform: rotate(-218deg) scale(1)
+
+        &:nth-of-type(2)
+          &::after
+            transform: rotate(-201deg) scale(1)
+
+        &:nth-of-type(3)
+          &::after
+            transform: rotate(-197deg) scale(1)
+
+        &:nth-of-type(4)
+          &::after
+            transform: rotate(-219deg) scale(1)
+
+        &:nth-of-type(5)
+          &::after
+            transform: rotate(-170deg) scale(1)
+
+        &:nth-of-type(6)
+          &::after
+            transform: rotate(-195deg) scale(1)
+
+        &:nth-of-type(7)
+          &::after
+            transform: rotate(-202deg) scale(1)
+
+        &:nth-of-type(8)
+          &::after
+            transform: rotate(-207deg) scale(1)
+
+  +e('subtitle')
+    color: $color-white
+    font-size: 14px
+    line-height: 19px
+    margin: 0 0 16px
+
+    +media($screen-lg)
+      font-size: 12px
+      line-height: 19px
+
+  +e('address')
+    color: $color-white
+    margin-bottom: 16px
+
+    +media($screen-lg)
+      font-size: 12px
+      line-height: 19px
+
+  +e('address-link')
+    color: $color-white
+    +ts()
+    position: relative
+
+    &::before
+      position: absolute
+      width: 0
+      height: 1px
+      content: ''
+      bottom: -2px
+      left: 0
+      +ts()
+      background-color: $color-white
+
+    &:hover
+      &::before
+        width: 100%
+
+    +media($screen-lg)
+      font-size: 12px
+      line-height: 19px
+
+  +e('inner')
+    +media($screen-lg)
+      display: flex
+
+
+

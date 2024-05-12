@@ -1,0 +1,106 @@
++b('form-group')
+  +e('tel-input')
+    &.vue-phone-number-input
+      .input-tel__label
+        display: none
+
+      .input-tel__input
+        border-radius: 0
+        border-color: #D6D6D6 !important
+        box-shadow: none !important
+        padding: 15px 20px !important
+        caret-color: $color-green !important
+        font-size: 13px
+        line-height: 15px
+        font-weight: 700
+        color: #525252
+        height: 45px
+
+        &:focus
+          border-color: $color-green !important
+
+
+
+      .select-country-container
+        width: 85px
+        margin-right: 20px
+        min-width: 85px
+        max-width: 85px
+        flex: auto
+
+        .country-selector
+          height: 45px !important
+
+      .country-selector__label
+        display: none
+
+      .country-selector__input
+        padding-top: 0 !important
+        border-radius: 0 !important
+        text-align: center
+        border-color: #D6D6D6 !important
+        box-shadow: none !important
+        font-size: 13px
+        line-height: 15px
+        font-weight: 700
+        color: #525252
+        height: 45px
+
+        &:focus
+          border-color: $color-green !important
+
+      .country-selector__toggle
+        top: 11px
+
+
+      .country-selector__list
+        top: calc(100% + 18px) !important
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1)
+        background-color: #FBFBFB
+        border-radius: 0 !important
+        overscroll-behavior-y: contain
+
+        &::-webkit-scrollbar
+          width: 5px
+          border-radius: 0
+          background-color: transparent
+
+        &::-webkit-scrollbar-thumb
+          border-radius: 0
+          width: 5px
+          background-color: rgba(#AFAFAF, 0.3)
+
+        @supports (scrollbar-color: rgba(#AFAFAF, 0.3) transparent)
+          scrollbar-color: rgba(#AFAFAF, 0.3) transparent
+          scrollbar-width: thin
+
+        .country-selector__list__item
+          font-size: 13px
+          line-height: 39px
+          font-weight: 700
+          background-color: transparent
+          height: 40px !important
+          color: #525252
+
+          &:hover
+            background-color: $color-green !important
+            color: $color-white
+
+            .country-selector__list__item__calling-code
+              color: $color-white
+
+        .country-selector__list__item.selected
+          background-color: $color-green !important
+          color: $color-white
+
+          .country-selector__list__item__calling-code
+            color: $color-white
+
+    +m('invalid')
+      &.vue-phone-number-input
+        .input-tel__input
+          border-color: #EB5454 !important
+
+          &:focus,
+          &:hover
+            border-color: #EB5454 !important

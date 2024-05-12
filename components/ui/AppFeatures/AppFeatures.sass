@@ -1,0 +1,98 @@
++b('features')
+  padding-bottom: 60px
+
+  +media($screen-lg)
+    padding-bottom: 200px
+
+  +e('title')
+    margin-bottom: 40px
+
+    +media($screen-lg)
+      margin-bottom: 60px
+
+      br
+        display: none
+
+  +e('text')
+    font-size: 19px
+    line-height: 33px
+    margin-bottom: 32px
+
+    +media($screen-lg)
+      width: 694px
+
+  +e('item')
+    box-sizing: border-box
+    width: 280px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    padding-left: 20px
+    padding-right: 20px
+    min-height: 90px
+    background-image: url("/img/features-card-bg.svg")
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+
+    &:not(:last-of-type)
+      margin-bottom: 8px
+
+    +media($screen-sm)
+
+      &:last-of-type
+        margin-bottom: 8px
+
+    +media($screen-lg)
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      padding-left: 40px
+      padding-right: 40px
+      width: 376px
+      min-height: 260px
+      background-image: url("/img/features-card-bg-desktop.svg")
+      margin-right: 6px
+
+      &:not(:last-of-type)
+        margin-bottom: 6px
+
+      &:last-of-type
+        margin-bottom: 6px
+
+    +media(1300px)
+      margin-right: 0
+
+  +e('figure')
+    width: 46px
+    flex-shrink: 0
+    margin-right: 24px
+
+    +media($screen-lg)
+      width: 68px
+      margin-right: 0
+      margin-bottom: 26px
+
+  +e('list')
+    +media($screen-sm)
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+
+    +media($screen-lg)
+      justify-content: flex-start
+
+    +media(1300px)
+      justify-content: space-between
+
+  +e('feature')
+    font-weight: 400
+    font-size: 18px
+    line-height: 25px
+
+    +media($screen-lg)
+      font-size: 20px
+
+  +e('img')
+    +media($screen-lg)
+      width: 100%

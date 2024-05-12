@@ -1,0 +1,18 @@
++b('title')
+  font-family: $font-family-title
+  margin: 0
+  font-weight: bold
+  font-size: 38px
+  line-height: 40px
+  color: $color-black
+
+  +m('color')
+    +m('white')
+      color: $color-white
+
+    +m('black')
+      color: $color-black
+
+  +media($screen-lg)
+    font-size: 69px
+    line-height: 1

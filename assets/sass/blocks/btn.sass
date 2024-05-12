@@ -1,0 +1,90 @@
++b('btn')
+  display: flex
+  align-items: center
+  justify-content: center
+  box-sizing: border-box
+  font-weight: 700
+  font-size: 16px
+  line-height: 24px
+  text-transform: uppercase
+  text-align: center
+  font-family: ProximaNova, Arial, sans-serif
+  user-select: none
+  transition: all 0.2s ease-out
+
+  +m('color')
+    +m('white')
+      border: 1px solid transparent
+      background-color: $color-white
+      color: $color-black
+
+      &:hover
+        background-color: #EAEAEA
+        color: $color-black
+        border-color: #EAEAEA
+
+      &:active
+        background-color: #D9D9D9
+        color: $color-black
+        border-color: #D9D9D9
+
+      &:disabled
+        background-color: #DBDBDB
+        color: #A8ADB3
+        border-color: #DBDBDB
+
+    +m('transparent')
+      border: 1px solid $color-white
+      background-color: transparent
+      color: $color-white
+
+      &:hover
+        background-color: rgba(255, 255, 255, 0.2)
+        color: $color-white
+        border-color: $color-white
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)
+
+      &:active
+        background-color: rgba(255, 255, 255, 0.4)
+        color: $color-white
+        border-color: $color-white
+
+      &:disabled
+        border-color: #DBDBDB
+        color: #DBDBDB
+        background-color: transparent
+
+    +m('green')
+      border: 1px solid $color-green
+      color: $color-black
+
+      &:hover
+        box-shadow: 2px 2px 5px rgba(129, 179, 59, 0.3)
+        color: #050100
+        border-color: $color-green
+
+      &:active
+        background-color: rgba(255, 255, 255, 0.4)
+        border-color: $color-green
+
+      &:disabled
+        border-color: #DBDBDB
+        color: #DBDBDB
+        background-color: transparent
+
+    +m('greenfull')
+      background-color: $color-green
+      color: $color-white
+
+      &:hover
+        background-color: #ADDE69
+        color: $color-white
+
+      &:active
+        background-color: #6C9D26
+        color: $color-white
+
+      &:disabled
+        background-color: #DBDBDB
+        color: #A8ADB3
+

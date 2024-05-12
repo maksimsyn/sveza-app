@@ -1,0 +1,226 @@
++b('carrier')
+  padding-top: 60px
+  padding-bottom: 85px
+  background-color: #F1F0EF
+  position: relative
+
+  &::before
+    content: ''
+    position: absolute
+    right: 0
+    bottom: 0
+    width: 160px
+    height: 44px
+    background-color: $color-white
+    clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0 100%)
+
+    +ie()
+      background-image: url("/img/carrier-clip-mobile.svg")
+      background-position: left
+      background-size: contain
+      background-repeat: no-repeat
+      background-color: transparent
+
+  +media($screen-lg)
+    padding-top: 116px
+    overflow: hidden
+
+    &::before
+      width: 524px
+      height: 102px
+
+      +ie()
+        background-image: url("/img/carrier-clip-desktop.svg")
+
+  +e('title')
+    margin-bottom: 40px
+
+    +media($screen-lg)
+      margin-bottom: 60px
+
+      br
+        display: none
+
+  +e('text')
+    font-size: 19px
+    line-height: 33px
+
+    +media($screen-lg)
+      width: 694px
+
+  +e('actions')
+    display: none
+
+    +media($screen-lg)
+      display: flex
+      align-items: center
+
+  +e('row')
+    margin-bottom: 32px
+
+    +media($screen-lg)
+      display: flex
+      justify-content: space-between
+      align-items: flex-end
+
+  +e('slider-counter')
+    display: inline-block
+    font-size: 15px
+    line-height: 25px
+    color: $color-grey
+    margin-bottom: 16px
+
+    +media($screen-lg)
+      display: none
+
+  +e('media')
+    position: relative
+    margin-bottom: 40px
+    height: 150px
+
+    +media($screen-sm)
+      height: 300px
+
+    +media($screen-lg)
+      height: 398px
+
+  +e('preview')
+    position: absolute
+    z-index: 1
+    width: 100%
+    height: 100%
+    +ts()
+
+    +m('hidden')
+      opacity: 0
+      visibility: hidden
+      display: none
+
+  +e('play')
+    position: absolute
+    +absolute-center()
+    z-index: 2
+
+    +media($screen-lg)
+      opacity: 0
+      visibility: hidden
+      transition: all 0.3s ease-in-out
+      width: 78px
+      height: 78px
+
+      &:hover
+        transform: translate(-50%, -50%) scale(1.2)
+
+      .icon
+        width: 100%
+        height: 100%
+
+  +e('figure')
+    width: 100%
+    height: 100%
+
+  +e('picture')
+    width: inherit
+    height: inherit
+
+  +e('img')
+    width: inherit
+    height: inherit
+    object-fit: cover
+    object-position: bottom
+
+  +e('desc')
+    font-size: 15px
+    line-height: 25px
+    color: $color-grey
+
+    +media($screen-lg)
+      column-count: 2
+      column-gap: 55px
+      transition: all 0.5s ease-in-out
+      opacity: 0
+      transform: translateY(20px)
+
+  +e('video')
+    width: 100%
+    height: 100%
+    object-fit: cover
+    cursor: pointer
+
+    .y-video__inner
+      padding: 0 !important
+      height: 100%
+
+      picture
+        width: 100%
+        height: 100%
+
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+      iframe
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    .y-video__button
+      display: none
+
+  +e('arrow')
+    stroke: #3F3F3F
+    transition: all 0.2s ease-out
+
+    +m('left')
+      transform: rotate(180deg)
+
+    &.swiper-button-disabled,
+    &:disabled
+      opacity: 0.2
+
+  +e('counter')
+    +media($screen-lg)
+      font-size: 15px
+      line-height: 25px
+      color: $color-grey
+      padding-left: 32px
+      padding-right: 32px
+
+  +e('slide-inner')
+    +media($screen-lg)
+      width: 706px
+
+  +e('slider')
+    +media($screen-lg)
+      width: 100vw
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+      padding-left: calc(100vw - 1140px)
+      margin-left: calc((100% - 87.5%) / 2)
+
+      +media(1300px)
+        margin-left: 0
+
+  +e('slide')
+    +media($screen-lg)
+      width: 706px
+
+      &.swiper-slide-active
+        .carrier__play
+          opacity: 1
+          visibility: visible
+
+        .carrier__desc
+          opacity: 1
+          transform: none
+
+      &:last-of-type
+        width: 1200px
+        height: 300px
+
+        +ie()
+          width: 1300px
+
+

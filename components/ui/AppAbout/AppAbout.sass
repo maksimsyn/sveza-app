@@ -1,0 +1,146 @@
++b('about')
+  //padding-top: 75px
+  padding-bottom: 70px
+
+  +media($screen-lg)
+    //padding-top: 200px
+    padding-bottom: 200px
+
+  +e('title')
+    display: none
+    margin-bottom: 32px
+
+    +m('mobile')
+      display: block
+
+    +media($screen-sm)
+      display: block
+
+      +m('mobile')
+        display: none
+
+    +media($screen-lg)
+      margin-bottom: 60px
+
+  +e('pics')
+    position: relative
+
+  +e('figure')
+    +m('bg')
+      width: 100%
+      height: 300px
+      overflow: hidden
+
+      +media($screen-sm)
+        height: auto
+
+      +media($screen-xl)
+        height: 920px
+
+    +m('absolute')
+      position: absolute
+      width: 100%
+      left: 0
+      bottom: 0
+      z-index: 1
+
+      .animated
+        #bp_svg *
+          stroke-dasharray: 2000
+          stroke-dashoffset: 2000
+          animation: dash 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards
+
+      +media($screen-xl)
+        width: 836px
+        height: 226px
+
+  +e('img')
+    width: 100%
+
+  +e('col')
+    +m('left')
+      margin-bottom: 40px
+
+      +media($screen-sm)
+        width: 48%
+        margin-bottom: 0
+
+      +media($screen-xl)
+        width: 512px
+
+    +m('right')
+      position: relative
+      overflow: hidden
+      height: 500px
+      +ts()
+
+      +media($screen-sm)
+        overflow: visible
+        width: 48%
+        height: auto
+
+      +media($screen-xl)
+        width: 560px
+
+  +e('text')
+    font-size: 15px
+    line-height: 25px
+
+    &:not(:last-of-type)
+      margin-bottom: 28px
+
+    +media($screen-sm)
+      text-align: justify
+
+    +media($screen-lg)
+      &:not(:last-of-type)
+        margin-bottom: 40px
+
+
+  +e('show')
+    width: 100%
+    padding-top: 16px
+    padding-bottom: 16px
+    box-sizing: border-box
+    position: absolute
+    left: 0
+    bottom: 0
+    z-index: 1
+    display: flex
+    align-items: center
+    background-color: $color-white
+
+    .icon
+      margin-right: 16px
+
+    &::before
+      content: ''
+      width: 100%
+      height: 118px
+      background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 89.8%)
+      position: absolute
+      left: 0
+      top: -118px
+
+    +media($screen-sm)
+      display: none
+
+  +e('inner')
+    +media($screen-sm)
+      display: flex
+      justify-content: space-between
+
+  +e('logo')
+    width: 100%
+    height: 100%
+    stroke: $color-green
+    stroke-width: 1px
+    fill-opacity: 0
+    stroke-dasharray: 0
+    stroke-dashoffset: 0
+
+    +ie()
+      fill-opacity: 1
+      stroke-opacity: 0
+      stroke-dashoffset: 0
+

@@ -1,0 +1,97 @@
+\:root
+  --vh: 1vh
+
+.visually-hidden
+  +visually-hidden()
+
+[data-whatinput='mouse'] *:focus,
+[data-whatinput='touch'] *:focus
+  outline: none
+
+[data-whatinput='keyboard'] *:not(input):focus
+  outline: 2px solid Highlight
+
+  @supports (outline-color: -webkit-focus-ring-color)
+    outline: 2px auto -webkit-focus-ring-color
+
+//lazy images
+
+.v-lazy-image
+  opacity: 0
+  transition: all 0.2s ease-in-out
+
+.v-lazy-image-loaded
+  opacity: 1
+
+@keyframes phone-ring
+  0%
+    transform: rotate(0deg)
+  30%
+    transform: rotate(15deg)
+  100%
+    transform: rotate(0deg)
+
+@keyframes dash
+  70%,80%
+    fill-opacity: 0
+
+  85%
+    fill-opacity: 0
+    stroke-opacity: 1
+
+  100%
+    fill-opacity: 1
+    stroke-opacity: 0
+    stroke-dashoffset: 0
+
+@keyframes pulse
+  0%
+    box-shadow: 0 0 0 0 rgba(129, 179, 59, 0.4)
+  70%
+    box-shadow: 0 0 0 10px rgba(129, 179, 59, 0)
+  100%
+    box-shadow: 0 0 0 0 rgba(129, 179, 59, 0)
+
+.fade-enter-active, .fade-leave-active
+  transition: opacity .5s
+
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+.slide-fade-enter-active, .slide-fade-leave-active
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1)
+
+.slide-fade-enter, .slide-fade-leave-to
+  opacity: 0
+  transform: translateY(20px)
+
++media($screen-lg)
+  [data-animation]
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    transition-delay: 0.2s
+
+  [data-animation=fade-up]
+    opacity: 0
+    transform: translate3d(0, 50px, 0)
+
+  [data-animation=fade-down]
+    opacity: 0
+    transform: translate3d(0, -50px, 0)
+
+  [data-animation=fade-left]
+    opacity: 0
+    transform: translate3d(-50px, 0, 0)
+
+  [data-animation=fade-right]
+    opacity: 0
+    transform: translate3d(50px, 0, 0)
+
+  @for $i from 1 through 10
+    [data-delay='#{$i * 50}']
+      transition-delay: #{$i * 0.05}s
+
+  .animated
+    opacity: 1
+    transform: none
+
+

@@ -1,0 +1,192 @@
++b('profile')
+  padding-top: 50px
+  padding-bottom: 40px
+
+  +media($screen-lg)
+    padding-top: 100px
+    padding-bottom: 100px
+
+  +e('title')
+    margin-bottom: 30px
+
+    +media($screen-lg)
+      padding-left: 90px
+      margin-bottom: 100px
+
+  +e('actions')
+    height: 44px
+    display: flex
+    align-items: center
+    background-color: $color-green
+    width: 100vw
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+    margin-bottom: 40px
+
+    +media($screen-lg)
+      display: none
+
+  +e('back')
+    height: inherit
+    padding-left: 20px
+    padding-right: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    z-index: 1
+    top: 0
+    left: 0
+
+    .icon
+      stroke-width: 2px
+      stroke: $color-white
+      transform: rotate(180deg)
+
+  +e('step')
+    margin-right: auto
+    margin-left: auto
+    font-size: 15px
+    line-height: 14px
+    font-weight: 700
+    color: $color-white
+    text-transform: uppercase
+
+  +e('group')
+    &:not(:last-of-type)
+      margin-bottom: 26px
+
+    +media($screen-sm)
+      width: 48%
+      max-width: 342px
+
+      &.checkbox
+        width: 100%
+        max-width: none
+
+      &:not(:last-of-type)
+       margin-bottom: 0
+
+      +m('full')
+        width: 100%
+        max-width: none
+
+  +e('row')
+    &:not(:last-of-type)
+      margin-bottom: 26px
+
+    +media($screen-sm)
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      align-items: flex-end
+
+    +media($screen-lg)
+      &:not(:last-of-type)
+        margin-bottom: 24px
+
+  +e('heading')
+    display: block
+    width: 100%
+    font-weight: 700
+    font-size: 13px
+    line-height: 18px
+    color: #727272
+    margin-bottom: 26px
+    text-transform: uppercase
+
+  +e('submit')
+    box-sizing: border-box
+    width: 100%
+    padding: 10px
+    margin-top: 40px
+
+    +media($screen-lg)
+      width: auto
+      padding: 20px 40px
+
+  +e('row-legend')
+    display: block
+    margin-bottom: 26px
+    font-size: 13px
+    line-height: 15px
+    text-transform: uppercase
+    font-weight: 700
+    color: #727272
+
+  +e('block')
+    &:not(:last-of-type)
+      margin-bottom: 60px
+
+  +e('doc')
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 20px
+    height: 20px
+    margin-left: 10px
+
+    .icon
+      fill: none
+      +ts()
+
+    &:hover
+      .icon
+        transform: translateX(5px)
+
+  +e('agree-label')
+    display: flex
+    align-items: center
+    position: relative
+    padding-left: 44px
+    font-weight: bold
+    font-size: 14px
+    line-height: 20px
+    color: #81B33B
+
+    +ie()
+      margin-right: auto
+
+    &::before
+      content: ''
+      position: absolute
+      width: 24px
+      height: 24px
+      box-sizing: border-box
+      border: 1px solid $color-green
+      left: 0
+      top: 0
+      border-radius: 50%
+
+    &::after
+      content: ''
+      width: 16px
+      position: absolute
+      height: 16px
+      border-radius: 50%
+      background-color: $color-green
+      top: 4px
+      left: 4px
+      transition: all 0.2s ease-out
+      transform: scale(0)
+
+    +media($screen-lg)
+      padding-top: 3px
+      margin-top: 28px
+
+      br
+        display: none
+
+  +e('agree')
+    &:checked ~ .profile__agree-label::after
+      transform: none
+
+  +e('form')
+    max-width: 722px
+    margin: 0 auto
+
+  +e('fieldset')
+    &:not(:last-of-type)
+      margin-bottom: 48px
+
