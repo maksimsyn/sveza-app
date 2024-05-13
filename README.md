@@ -5,7 +5,7 @@
 </h4>
 
 <p align="center">
-<img alt='Превью' src="https://github.com/maksimsyn/sveza-app/blob/master/docs/demo.png">
+<img alt='Превью' src="https://github.com/maksimsyn/sveza-app/blob/main/docs/demo.png">
 </p>
 
 ## Демо 👀
