@@ -1,7 +1,7 @@
 <h3 align="center">Свеза</h3>
 
 <h4 align="center">
-Одностраничное приложения для просмотра фильмов с помощью The Movie Database API.   
+Многостраничный сайт для компании Свеза 
 </h4>
 
 <p align="center">
